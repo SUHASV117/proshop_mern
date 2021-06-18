@@ -16,10 +16,14 @@ services:
             - '90:5000'
         links:
             - mongo
+        environment:
+          NODE_ENV: "${NODE_ENV}"
+          PORT: "${PORT}"
+          MONGO_URI: "${MONGO_URI}"
+          JWT_SECRET: "${JWT_SECRET}"
     mongo:
         container_name: mongo
         image: mongo
         ports:
             - '27017:27017'
-        
 
